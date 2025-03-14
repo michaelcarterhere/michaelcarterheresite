@@ -1,5 +1,3 @@
-
-
 $theme-font-color: wheat;
 $font-size-p-mobile: 1rem;
 $font-size-subheading-mobile: 1.2rem;
@@ -9,6 +7,9 @@ $font-size-p-desktop: 1.125rem;
 $font-size-subheading-desktop: 1.5rem;
 $font-size-heading-desktop: 3rem;
 $desktop-h3: 1.2rem;
+
+$padding-desktop: 4rem 2rem;
+$padding-mobile: 2rem 2rem;
 
 
 * {
@@ -29,42 +30,10 @@ body {
     background-color: #0e0e0e;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-align-items: center;
-padding: 1rem 2rem;
-background-color: rgba(4, 0, 0, 0.664);
-backdrop-filter: blur(20px);
-position: fixed;
-color: #fff;
-width: 100vw;
-height: 60px;
-font-size: $font-size-subheading-mobile;
-
-    
-a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.logo{
-    padding: 0.3em;
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-}
-
-
-@media (min-width: 1020px) {
-    nav{
-        display: flex;
-        justify-content: center;
-        gap: 30px;
     align-items: center;
     padding: 1rem 2rem;
     background-color: rgba(4, 0, 0, 0.664);
@@ -73,14 +42,15 @@ a{
     color: #fff;
     width: 100vw;
     height: 60px;
-    font-size: $desktop-h3;
-    
-    a{
+    font-size: $font-size-subheading-mobile;
+
+
+    a {
         color: #fff;
         text-decoration: none;
     }
-    
-    .logo{
+
+    .logo {
         padding: 0.3em;
         background-color: white;
         color: black;
@@ -89,6 +59,37 @@ a{
         align-items: center;
     }
 }
+
+
+@media (min-width: 1020px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: rgba(4, 0, 0, 0.664);
+        backdrop-filter: blur(20px);
+        position: fixed;
+        color: #fff;
+        width: 100vw;
+        height: 60px;
+        font-size: $desktop-h3;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo {
+            padding: 0.3em;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
 }
 
@@ -101,22 +102,24 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 4rem 4rem;
+    padding: $padding-mobile;
 
     img {
         width: 80%;
         object-fit: cover;
+        margin-top: 5rem;
     }
 
     h1 {
+        margin-top: 2rem;
         text-align: center;
         font-weight: 100;
-        font-size: 3.6rem;
+        font-size: 2rem;
     }
 
     p {
         font-weight: 100;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         text-align: center;
         line-height: 1.6;
         margin: 0.9rem 0;
@@ -133,53 +136,95 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
+    flex-direction: column;
 
-
-    .marquee {
+    .whats-new {
+        width: 100%;
         display: flex;
-        width: 50%;
-        overflow-x: hidden;
-        position: relative;
-    
-        &::after, 
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            pointer-events: none; // Prevents interaction issues
-            z-index: 2;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+            font-size: $font-size-heading-desktop;
+            font-weight: 100;
         }
-    
-        &::after {
-            left: -5px; // Extend slightly outside
-            background-image: linear-gradient(to right, #0e0e0e, transparent);
-            // background-color: red;
-        }
-        
-        &::before {
-            right:-5px; // Extend slightly outside
-            background-image: linear-gradient(to right, transparent, #0e0e0e);
-            // background-color: red;
-        }
-    }
-    
 
-        .text {
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #0e0e0e;
             display: flex;
-            gap: 3rem;
-            animation: marquee 10s linear infinite both;
-            padding: 0 1.5rem;
+            justify-content: center;
+            padding: 1.5rem;
+            border: 2px solid white;
+            margin: 2rem 0;
+            flex-direction: column;
+            gap: 1.1rem;
+            background-color: #0d0101a9;
+        }
 
-            p {
-                font-size: 2rem;
-                font-weight: 600;
-            }
+        h3 {
+            font-size: $font-size-subheading-desktop;
+            font-weight: 100;
+            color: white;
+            margin-bottom: -12px;
+        }
+
+        p,
+        a {
+            font-size: $font-size-p-desktop;
+            font-weight: 100;
+            color: white;
         }
 
     }
+}
+
+.marquee{
+    display: flex;
+    width: 50%;
+    overflow-x: hidden;
+    position: relative;
+        
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        pointer-events: none; // Prevents interaction issues
+        z-index: 2;
+    }
+
+    &::after {
+        left: -5px; // Extend slightly outside
+        background-image: linear-gradient(to right, #0e0e0e, transparent);
+        // background-color: red;
+    }
+
+    &::before {
+        right: -5px; // Extend slightly outside
+        background-image: linear-gradient(to right, transparent, #0e0e0e);
+        // background-color: red;
+    }
+}
+
+
+.text {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 10s linear infinite both;
+    padding: 0 1.5rem;
+
+    p {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}
+
+
 
 
 @keyframes marquee {
@@ -207,7 +252,7 @@ main {
         }
 
         h1 {
-            font-size: 7rem;
+            font-size: 4.4rem;
         }
 
         p {
@@ -220,6 +265,19 @@ main {
         }
     }
 
+    .view-2 {
+        padding: $padding-desktop;
+        .whats-new{
+            width: 100%;
+            .box-cont{
+                width: 100%;
+                gap: 3.5rem;
+                display: flex;
+                justify-content: center;
+                
+            }
+        }
+    }
 }
 
 .cta-page{
@@ -230,158 +288,178 @@ main {
     flex-direction: column;
     padding: 4rem 2rem;
 
-.left{
-    h2{
-        font-size:$font-size-heading-mobile;
-        margin-bottom: 1rem;
-        font-weight: 400;
-        span{
-            font-style: italic;
+    .left {
+        h2 {
+            font-size: $font-size-heading-mobile;
+            margin-bottom: 1rem;
+            font-weight: 400;
+
+            span {
+                font-style: italic;
+            }
+        }
+
+        p {
+            font-size: $font-size-p-mobile;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    .right {
+        margin-top: 2rem;
+        width: 100%;
+
+
+        h2 {
+            font-size: $font-size-heading-mobile;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            button {
+                padding: 1rem 2rem;
+                font-size: $font-size-subheading-mobile;
+                background-color: #0e0e0e;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #000;
+            }
+
+            input:focus,
+            textarea:focus {
+                outline: none;
+                border: 2px solid #0e0e0e;
+            }
+
+            ::placeholder {
+                font-size: $font-size-p-mobile;
+            }
+
+            ::-webkit-input-placeholder {
+                font-size: $font-size-p-mobile;
+            }
+        }
+
+        label {
+            font-size: $font-size-subheading-mobile;
+            margin-bottom: 0.1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            font-size: $font-size-p-mobile;
+            border-radius: 5px;
+            border: none;
+        }
+
+        textarea {
+
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            font-size: $font-size-p-mobile;
+            resize: vertical;
         }
     }
-    
-    p{
-        font-size: $font-size-p-mobile;
-        margin-bottom: 1rem;
-    }
+
 
 }
-.right{
-    margin-top: 2rem;
-    width: 100%;
-
-
-    h2{
-        font-size: $font-size-heading-mobile;
-        margin-bottom: 1rem;
-        font-weight: 400;
-    }
-
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    
-    button{
-        padding: 1rem 2rem;
-        font-size: $font-size-subheading-mobile;
-        background-color: #0e0e0e;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    button:hover{
-        background-color: #000;
-    }
-
-    input:focus, textarea:focus{
-        outline: none;
-        border: 2px solid #0e0e0e;
-    }
-
-    ::placeholder{
-        font-size: $font-size-p-mobile;
-    }
-    
-    ::-webkit-input-placeholder{
-        font-size: $font-size-p-mobile;
-    }
-}
-
-label{
-    font-size: $font-size-subheading-mobile;
-    margin-bottom: 0.1rem;
-} 
-
-    input{
-        width: 100%;
-        padding: 1rem;
-        font-size: $font-size-p-mobile;
-        border-radius:5px;
-        border: none;
-    }
-    
-    textarea{
         
-        border: none;
-        border-radius:5px;
-        width: 100%;
-        height: 200px;
-        padding: 1rem;
-        font-size: $font-size-p-mobile;
-        resize: vertical;
-    }
-}
-
-
-}
 
 @media (min-width: 1020px) {
 
-   .cta-page{
+    .cta-page {
         padding: 4rem 2rem;
         flex-direction: row;
         gap: 4rem;
 
-        .left{
+        .left {
             width: 50%;
-            h2{
+
+            h2 {
                 font-size: $font-size-heading-desktop;
             }
-            p{
+
+            p {
                 font-size: $font-size-p-desktop;
             }
         }
-        .right{
+
+        .right {
             width: 50%;
 
-            .name-email{
+            .name-email {
                 width: 100%;
                 display: flex;
                 gap: 1rem;
-                
-                label{
+
+                label {
                     font-size: $font-size-p-desktop;
                     align-self: start;
+                    margin-bottom: 1rem;
                 }
-                
-                input, textarea{
+
+                input,
+                textarea {
                     font-size: $font-size-p-desktop;
+                    margin-top: 0.3rem;
+                }
+
+                .message-label {
+
+                    margin-top: 2rem;
+                    resize: vertical;
+
                 }
             }
 
-            h2{
+            h2 {
                 font-size: $font-size-heading-desktop;
                 text-align: center;
             }
-            form{
+
+            form {
                 width: 100%;
-                border: 2px solid red;
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
                 padding: 2rem;
             }
-            h2{
+
+            h2 {
                 font-size: $font-size-heading-desktop;
             }
-            
-            input, textarea{
+
+            input,
+            textarea {
                 font-size: $font-size-p-desktop;
             }
-            button{
+
+            button {
                 font-size: $font-size-subheading-desktop;
             }
 
-            label{
+            label {
                 font-size: $font-size-subheading-desktop;
                 margin-bottom: 0rem;
             }
-         
+
         }
-   }
+    }
 
 
 }
