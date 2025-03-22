@@ -16,6 +16,10 @@ body {
   background-color: #0e0e0e;
 }
 
+main {
+  width: 100%;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -73,10 +77,6 @@ nav .logo {
     align-items: center;
   }
 }
-main {
-  width: 100%;
-}
-
 .view-1 {
   display: flex;
   flex-direction: column;
@@ -85,7 +85,7 @@ main {
   padding: 2rem 2rem;
 }
 .view-1 img {
-  width: 80%;
+  width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-top: 5rem;
@@ -129,22 +129,28 @@ main {
 }
 .view-2 .whats-new .box {
   width: 300px;
-  height: 300px;
-  background-color: #0e0e0e;
+  background-color: #392d1c;
   display: flex;
   justify-content: center;
   padding: 1.5rem;
-  border: 2px solid white;
+  border: 2px solid #392d1c;
   margin: 2rem 0;
   flex-direction: column;
-  gap: 1.1rem;
-  background-color: rgba(13, 1, 1, 0.662745098);
+  min-height: auto;
+}
+.view-2 .whats-new .box p:first-child {
+  flex-grow: 0;
 }
 .view-2 .whats-new h3 {
+  flex-grow: 0;
   font-size: 1.5rem;
   font-weight: 100;
   color: white;
-  margin-bottom: -12px;
+  margin-bottom: 20px;
+}
+.view-2 .whats-new p:nth-child(3) {
+  flex-grow: 1;
+  margin-bottom: 10px;
 }
 .view-2 .whats-new p,
 .view-2 .whats-new a {
@@ -152,12 +158,20 @@ main {
   font-weight: 100;
   color: white;
 }
+.view-2 .whats-new a {
+  text-decoration: none;
+  color: white;
+}
+.view-2 .whats-new a i {
+  font-size: 1.5rem;
+}
 
 .marquee {
   display: flex;
   width: 50%;
   overflow-x: hidden;
   position: relative;
+  margin-top: 100px;
 }
 .marquee::after, .marquee::before {
   content: "";
@@ -207,7 +221,7 @@ main {
     width: 28%;
   }
   .view-1 h1 {
-    font-size: 4.4rem;
+    font-size: 3.8rem;
   }
   .view-1 p {
     font-size: 1.4rem;
@@ -226,6 +240,9 @@ main {
     gap: 3.5rem;
     display: flex;
     justify-content: center;
+  }
+  .view-2 .whats-new .box-cont .box {
+    min-height: 30rem;
   }
 }
 .cta-page {
@@ -370,5 +387,73 @@ main {
   .cta-page .right label {
     font-size: 1.5rem;
     margin-bottom: 0rem;
+  }
+}
+.view-3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+  flex-direction: column;
+}
+.view-3 .v3-header {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.view-3 .v3-header h2 {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.view-3 .v3-header a {
+  font-size: 1rem;
+  font-weight: 100;
+  color: white;
+  text-decoration: none;
+}
+.view-3 .v3-header .v3-grid {
+  display: grid;
+  width: 100%;
+}
+.view-3 .v3-header .v3-grid .v3-boxes {
+  width: 200px;
+  height: 200px;
+  background-color: #392d1c;
+  background-color: red;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .view-1 {
+    padding: 4rem 4rem;
+  }
+  .view-1 img {
+    width: 250px;
+  }
+  .view-1 h1 {
+    font-size: 3rem;
+  }
+  .view-1 p {
+    font-size: 1.2rem;
+  }
+  .view-1 p br {
+    display: block;
+  }
+  .view-2 {
+    padding: 4rem 4rem;
+  }
+  .view-2 .whats-new {
+    width: 100%;
+  }
+  .view-2 .whats-new .box-cont {
+    width: 100%;
+    gap: 3.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .view-2 .whats-new .box-cont .box {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

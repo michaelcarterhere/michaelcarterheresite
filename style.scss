@@ -1,3 +1,4 @@
+// Global Variables:
 $theme-font-color: wheat;
 $font-size-p-mobile: 1rem;
 $font-size-subheading-mobile: 1.2rem;
@@ -12,6 +13,7 @@ $padding-desktop: 4rem 2rem;
 $padding-mobile: 2rem 2rem;
 
 
+// Global Styles:
 * {
     margin: 0;
     padding: 0;
@@ -30,6 +32,12 @@ body {
     background-color: #0e0e0e;
 }
 
+main {
+    width: 100%;
+}
+
+
+// Navbar:
 nav {
     display: flex;
     justify-content: center;
@@ -60,7 +68,7 @@ nav {
     }
 }
 
-
+// nav-deskto:
 @media (min-width: 1020px) {
     nav {
         display: flex;
@@ -93,9 +101,7 @@ nav {
 
 }
 
-main {
-    width: 100%;
-}
+
 
 .view-1 {
     display: flex;
@@ -105,7 +111,7 @@ main {
     padding: $padding-mobile;
 
     img {
-        width: 80%;
+        width: 200px;
         object-fit: cover;
         margin-top: 5rem;
     }
@@ -131,6 +137,8 @@ main {
     }
 }
 
+
+// View 2
 .view-2 {
     width: 100%;
     display: flex;
@@ -145,6 +153,7 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
         h2 {
             font-size: $font-size-heading-desktop;
             font-weight: 100;
@@ -152,24 +161,42 @@ main {
 
         .box {
             width: 300px;
-            height: 300px;
-            background-color: #0e0e0e;
+
+            background-color: #392d1c;
             display: flex;
             justify-content: center;
             padding: 1.5rem;
-            border: 2px solid white;
+            border: 2px solid #392d1c;
             margin: 2rem 0;
             flex-direction: column;
-            gap: 1.1rem;
-            background-color: #0d0101a9;
+            min-height: auto;
+
+
+            p:first-child {
+                flex-grow: 0;
+            }
+
+
+
         }
 
         h3 {
+            flex-grow: 0;
             font-size: $font-size-subheading-desktop;
             font-weight: 100;
             color: white;
-            margin-bottom: -12px;
+            margin-bottom: 20px;
+
         }
+
+
+        p:nth-child(3) {
+            flex-grow: 1;
+            margin-bottom: 10px;
+        }
+
+
+
 
         p,
         a {
@@ -178,15 +205,25 @@ main {
             color: white;
         }
 
+        a{
+            text-decoration: none;
+            color: white;
+
+            i{
+                font-size: 1.5rem;
+            }
+        }
+
     }
 }
 
-.marquee{
+.marquee {
     display: flex;
     width: 50%;
     overflow-x: hidden;
     position: relative;
-        
+    margin-top: 100px;
+
     &::after,
     &::before {
         content: "";
@@ -252,7 +289,7 @@ main {
         }
 
         h1 {
-            font-size: 4.4rem;
+            font-size: 3.8rem;
         }
 
         p {
@@ -267,20 +304,25 @@ main {
 
     .view-2 {
         padding: $padding-desktop;
-        .whats-new{
+
+        .whats-new {
             width: 100%;
-            .box-cont{
+
+            .box-cont {
                 width: 100%;
                 gap: 3.5rem;
                 display: flex;
                 justify-content: center;
-                
+
+                .box{
+                    min-height: 30rem;
+                }
             }
         }
     }
 }
 
-.cta-page{
+.cta-page {
     width: 100%;
     display: flex;
     align-items: center;
@@ -378,7 +420,7 @@ main {
 
 
 }
-        
+
 
 @media (min-width: 1020px) {
 
@@ -462,4 +504,95 @@ main {
     }
 
 
+}
+
+
+
+// view-3(mobile):
+.view-3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+    flex-direction: column;
+
+    .v3-header{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            font-size: $font-size-heading-mobile;
+            font-weight: 100;
+        }
+
+        a{
+            font-size: $font-size-p-mobile;
+            font-weight: 100;
+            color: white;
+            text-decoration: none;
+        }
+
+        .v3-grid{
+            display: grid;
+            width: 100%;
+
+            .v3-boxes{
+                width: 200px;
+                height: 200px;
+                background-color: #392d1c;
+                background-color: red;
+            }
+        }
+    }
+}
+
+
+
+
+
+// Tablet Specific Styles:
+@media (min-width: 600px) and (max-width: 1024px) {
+    .view-1 {
+        padding: 4rem 4rem;
+
+        img {
+            width: 250px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+
+            br {
+                display: block;
+            }
+
+        }
+    }
+
+    .view-2 {
+        padding: 4rem 4rem;
+
+        .whats-new {
+            width: 100%;
+
+            .box-cont {
+                width: 100%;
+                gap: 3.5rem;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                .box {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
