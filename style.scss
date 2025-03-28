@@ -1,5 +1,5 @@
 // Global Variables:
-$theme-font-color: wheat;
+$theme-font-color: #AF0404;
 $font-size-p-mobile: 1rem;
 $font-size-subheading-mobile: 1.2rem;
 $font-size-heading-mobile: 2rem;
@@ -22,14 +22,14 @@ $padding-mobile: 2rem 2rem;
 
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: wheat;
+    color: #AF0404;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #0e0e0e;
+    background-color: #000000;
 }
 
 main {
@@ -37,14 +37,15 @@ main {
 }
 
 
-// Navbar-Mobile:
+// Navbar & Footer mobile:
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 30px;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(4, 0, 0, 0.664);
+    padding: $padding-mobile;
+    background-color: rgba(255, 255, 255, 0.096);
     backdrop-filter: blur(20px);
     position: fixed;
     color: #fff;
@@ -52,6 +53,7 @@ nav {
     height: 60px;
     font-size: $font-size-subheading-mobile;
     z-index: 1;
+    
 
 
 
@@ -70,15 +72,19 @@ nav {
     }
 }
 
-// nav-desktop:
+
+
+
+// Navbar & Footer desktop:
 @media (min-width: 1020px) {
     nav {
         display: flex;
-        justify-content: center;
+        padding: $padding-desktop;
+        justify-content: space-between;
+    width: 100%;
         gap: 30px;
         align-items: center;
         padding: 1rem 2rem;
-        background-color: rgba(4, 0, 0, 0.664);
         backdrop-filter: blur(20px);
         position: fixed;
         color: #fff;
@@ -86,14 +92,32 @@ nav {
         height: 60px;
         font-size: $desktop-h3;
 
+
+        .nav-links{
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+        
+        }
+
         a {
             color: #fff;
             text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            font-weight: 100; 
+        }
+
+        a:hover{
+            color: $theme-font-color;
+            transform: scale(1.1);
         }
 
         .logo {
-            padding: 0.3em;
-            background-color: white;
+            padding: 0.5rem;
+            font-weight: 700;
+            background-color: rgb(245, 35, 35);
             color: black;
             display: flex;
             justify-content: center;
@@ -101,10 +125,72 @@ nav {
         }
     }
 
+    
 }
 
+footer{
+    background-color: rgba(255, 255, 255, 0.096);
+    width: 100%;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    padding: 2rem 2rem;
+    color: #fff;
+    font-size: $font-size-p-desktop;
+    font-weight: 100;
 
+    .footer-container{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
+    .footer-section{
+        width: 30%;
+        min-width: 250px;
+        margin: 10px 0;
+
+        h3 {
+            font-size: $font-size-subheading-desktop;
+            font-weight: 100;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: $theme-font-color;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            margin: 10px 0;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+            font-weight: 100;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover{
+            color: $theme-font-color;
+            transform: scale(1.1);
+        }
+
+    }
+
+    .footer-bottom{
+        padding: 10px;
+        color: grey;
+        margin-top: 70px;
+    }
+}
+
+// View-1 Mobile:
 .view-1 {
     display: flex;
     flex-direction: column;
@@ -116,6 +202,9 @@ nav {
         width: 200px;
         object-fit: cover;
         margin-top: 5rem;
+        border-radius: 100%;
+        -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
     }
 
     h1 {
@@ -140,7 +229,7 @@ nav {
 }
 
 
-// View 2
+// View-2 Mobile: 
 .view-2 {
     width: 100%;
     display: flex;
@@ -164,12 +253,13 @@ nav {
         .box {
             width: 100%;
 
-            background-color: #392d1c;
+            background-color: #FF0000;
             display: flex;
             justify-content: center;
             padding: 1.5rem;
-            border: 2px solid #392d1c;
+            border: 1px solid white;
             margin: 2rem 0;
+            border-radius: 2px;
             flex-direction: column;
             min-height: auto;
 
@@ -226,6 +316,7 @@ nav {
     position: relative;
     margin-top: 100px;
 
+
     &::after,
     &::before {
         content: "";
@@ -239,13 +330,13 @@ nav {
 
     &::after {
         left: -5px; // Extend slightly outside
-        background-image: linear-gradient(to right, #0e0e0e, transparent);
+        background-image: linear-gradient(to right, #000000, transparent);
         // background-color: red;
     }
 
     &::before {
         right: -5px; // Extend slightly outside
-        background-image: linear-gradient(to right, transparent, #0e0e0e);
+        background-image: linear-gradient(to right, transparent, #000000);
         // background-color: red;
     }
 }
@@ -541,13 +632,15 @@ nav {
         padding: $padding-desktop;
 
         img {
-            width: 28%;
+            margin-top: 1rem;
+            width: 25%;
         }
 
         h1 {
-            font-size: 3.8rem;
-        }
+            font-size: 3.3rem;
 
+        }
+        
         p {
             font-size: 1.4rem;
 
@@ -584,7 +677,7 @@ nav {
 
         .left {
             width: 50%;
-            margin-top: -2rem;
+            margin-top: -4rem;
             h2 {
                 font-size: $font-size-heading-desktop;
             }
