@@ -1,5 +1,5 @@
 // Global Variables:
-$theme-font-color: #AF0404;
+$theme-font-color: #CF0F47;
 $font-size-p-mobile: 1rem;
 $font-size-subheading-mobile: 1.2rem;
 $font-size-heading-mobile: 2rem;
@@ -21,19 +21,18 @@ $padding-mobile: 2rem 2rem;
 }
 
 html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #AF0404;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #FFDEDE;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #000000;
 }
 
 main {
-    width: 100%;
+    background-color: black;
 }
 
 
@@ -45,7 +44,7 @@ nav {
     gap: 30px;
     align-items: center;
     padding: $padding-mobile;
-    background-color: rgba(255, 255, 255, 0.096);
+    // background-color: rgba(255, 255, 255, 0.096);
     backdrop-filter: blur(20px);
     position: fixed;
     color: #fff;
@@ -82,6 +81,7 @@ nav {
         padding: $padding-desktop;
         justify-content: space-between;
     width: 100%;
+        font-weight: 100;
         gap: 30px;
         align-items: center;
         padding: 1rem 2rem;
@@ -91,9 +91,10 @@ nav {
         width: 100vw;
         height: 60px;
         font-size: $desktop-h3;
-
-
+        
+        
         .nav-links{
+            opacity: 0.6;
             display: flex;
             gap: 30px;
             align-items: center;
@@ -129,12 +130,11 @@ nav {
 }
 
 footer{
-    background-color: rgba(255, 255, 255, 0.096);
+    background-color: black;
     width: 100%;
     backdrop-filter: blur(20px);
     text-align: center;
     padding: 2rem 2rem;
-    color: #fff;
     font-size: $font-size-p-desktop;
     font-weight: 100;
 
@@ -170,7 +170,7 @@ footer{
         }
 
         a{
-            color: white;
+            opacity: 0.6;
             text-decoration: none;
             font-weight: 100;
             transition: all 0.3s ease-in-out;
@@ -193,13 +193,28 @@ footer{
 // View-1 Mobile:
 .view-1 {
     display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
     padding: $padding-mobile;
+    flex-direction: column;
+    position: relative;
 
+
+
+    #triangle-right{
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 10%;
+        left: 0;
+        z-index: 1;
+        border-left: 0 solid transparent;
+        border-right: 95px solid transparent;
+        border-bottom: 95px solid red; /* Change color here */
+        filter: blur(35px);
+    }
     img {
-        width: 200px;
+        width: 250px;
         object-fit: cover;
         margin-top: 5rem;
         border-radius: 100%;
@@ -207,6 +222,38 @@ footer{
         mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
     }
 
+    .main-pic{
+        width: 100%;
+        height: 100%;
+        // background-color: red;
+        display: flex;
+        justify-content: center
+    }
+    
+    .main-text{
+        width: 100%;
+        height: 100%;
+    
+        .socials{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        a{
+            text-decoration: none;
+            color: $theme-font-color;
+            font-size: 25px;
+            opacity: 0.6;
+        
+        }
+
+        a:hover{
+            color: red;
+
+        }
+    }
+    
     h1 {
         margin-top: 2rem;
         text-align: center;
@@ -246,23 +293,24 @@ footer{
         flex-direction: column;
 
         h2 {
-            font-size: $font-size-heading-desktop;
+            color:$theme-font-color;
+            font-size: $font-size-heading-mobile;
             font-weight: 100;
         }
 
         .box {
             width: 100%;
-
-            background-color: #FF0000;
+            background: rgba(255, 255, 255, 0.1); /* soft glassmorphism */
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             padding: 1.5rem;
-            border: 1px solid white;
+            border-radius: 5px;
             margin: 2rem 0;
-            border-radius: 2px;
-            flex-direction: column;
-            min-height: auto;
-
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
             p:first-child {
                 flex-grow: 0;
@@ -381,12 +429,13 @@ footer{
             font-size: $font-size-heading-mobile;
             margin-bottom: 1rem;
             font-weight: 400;
+            color: #CF0F47;
 
             span {
                 font-style: italic;
             }
         }
-
+        
         p {
             font-size: $font-size-p-mobile;
             margin-bottom: 1rem;
@@ -397,9 +446,10 @@ footer{
     .right {
         margin-top: 2rem;
         width: 100%;
-
-
+        
+        
         h2 {
+            color: $theme-font-color;
             font-size: $font-size-heading-mobile;
             margin-bottom: 1rem;
             font-weight: 400;
@@ -485,6 +535,7 @@ footer{
         align-items: center;
 
         h2 {
+            color: $theme-font-color;
             font-size: $font-size-heading-mobile;
             font-weight: 100;
         }
@@ -497,6 +548,9 @@ footer{
         }
     }
 
+
+
+
     .v3-grid {
         margin-top: 2rem;
         display: grid;
@@ -507,8 +561,13 @@ footer{
         .v3-boxes {
             width: 100%;
             height: 340px;
-            background-color: red;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1); /* soft glassmorphism */
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
+            border-radius: 5px;
 
 
             h3 {
@@ -532,12 +591,79 @@ footer{
 }
 
 
+// TimeLine
+
+
+
+// About
+.about{ 
+    width: 100%;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .about-info{
+        width: 100%;
+        justify-self: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .about-left{
+        width: 100%;
+        img{
+            display: none;
+        }
+    }
+
+    .about-right{
+        p{
+            text-align: center;
+            font-size: $font-size-p-mobile;
+        }
+    }
+
+    h2{
+        text-align: center;
+        font-size: $font-size-heading-mobile;
+        font-weight: 100;
+        color: $theme-font-color;
+        margin-bottom: 50px;
+    
+    }
+
+
+}
 
 
 // Tablet Styles:
 @media (min-width: 743px) and (max-width: 1024px) {
     .view-1 {
         padding: 4rem 4rem;
+        flex-direction: column;
+
+
+        .main-text{
+            a{
+                font-size: 35px;
+            }
+        }
+
+        #triangle-right{
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 10%;
+            left: 0;
+            z-index: 1;
+            border-left: 0 solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 200px solid red; /* Change color here */
+            filter: blur(35px);
+        }
 
         img {
             width: 250px;
@@ -565,7 +691,6 @@ footer{
 
             .box-cont {
                 width: 100%;
-                gap: 3.5rem;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
@@ -612,11 +737,14 @@ footer{
             .v3-boxes {
                 width: 100%;
                 height: 340px;
-                background-color: red;
                 grid-template-columns: repeat(2, 1fr);
             }
         }
     }
+
+
+
+
 }
 
 
@@ -628,12 +756,128 @@ footer{
         font-size: clamp(16px, 1vw, 20px);
     }
 
+
+    .Experience{
+        padding: $padding-desktop;
+        width: 100%;
+    
+        h2{
+            font-size: $font-size-heading-desktop;
+            color: $theme-font-color;
+            text-align: center;
+            font-weight: 100;
+        }
+
+        .timeline{
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+            
+
+
+            .timeline-container{
+                padding: 10px 50px;
+                position: relative;
+                width: 50%;
+
+                .text-box{
+                    padding: 20px 30px;
+                    background-color: white;
+                    border-radius: 5px;
+                    position: relative;
+                    color: black;
+
+                    h3{
+                        font-weight: 600;
+                    }
+
+                    p{
+                        margin-top: 15px;
+                    }
+          
+                }
+
+
+                i{
+                    position: absolute;
+                    top: 32px;
+                    width: 40px;
+                    right: -20px;
+                    z-index: 10;
+                    border-radius: 50%;
+                    color: white;
+                    font-size: larger;
+                }
+            }
+
+            .left-container{
+                left: 0;
+                i{
+                    right: -80px;
+                }
+            }
+            
+            .right-container{
+                left: 50%;
+                i{
+                    left: -59px;
+                }
+            }
+        }
+
+        .timeline::after{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background-color: white;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+
+        }
+
+
+    }
+
     .view-1 {
         padding: $padding-desktop;
+        flex-direction: row;
+        min-height: 100vh;
+        width: 100%;
+        
+
+        #triangle-right{
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 10%;
+            left: 0;
+            z-index: 1;
+            border-left: 0 solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 200px solid red; /* Change color here */
+            filter: blur(35px);
+        }
+
+        .marquee{
+            align-self: flex-end;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+    
+        }
+        
+        .main-text{
+            a{
+                font-size: 35px;
+            }
+        }
 
         img {
             margin-top: 1rem;
-            width: 25%;
+            width: 400px;
         }
 
         h1 {
@@ -654,9 +898,13 @@ footer{
     .view-2 {
         padding: $padding-desktop;
 
+        
         .whats-new {
             width: 100%;
-
+            
+            h2{
+                font-size: $font-size-heading-desktop;
+            }
             .box-cont {
                 width: 100%;
                 gap: 3.5rem;
@@ -749,7 +997,6 @@ footer{
         }
     }
 
-    // view-3 desktop:
     .view-3 {
         width: 100%;
         display: flex;
@@ -782,17 +1029,69 @@ footer{
         }
 
         .v3-grid {
-            margin-top: 2rem;
+            margin-top: 1rem;
             display: grid;
-            gap: 2rem;
+            gap: 1rem;
             grid-template-columns: repeat(2, 1fr);
 
             .v3-boxes {
                 width: 100%;
-                height: 340px;
-                background-color: red;
+                height: 320px;
             }
         }
+    }
+
+    .about{
+        margin-top: 50px;
+        position: relative;
+        min-height: 50vh;
+
+        .about-right{
+            p{
+                font-size: $font-size-p-desktop;
+            }
+        }
+    
+        h2{
+            font-size: $font-size-heading-desktop;
+
+        
+        }
+
+        .about-info{
+
+        
+            p{
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+        
+        .about-left{
+            img{
+                display: block;
+                position: absolute;
+            }
+
+            .img-1{
+                top: 0px;
+                left: 50px;
+                width: 250px;
+            }
+
+            .img-2{
+            bottom: -10px;
+                left: 90px;
+            }
+
+            .img-3{
+                top: 150px;
+                left: 1150px;
+                width: 250px;
+            }
+        
+        }
+
     }
 
 
