@@ -164,7 +164,8 @@ footer .footer-bottom {
   z-index: 1;
   border-left: 0 solid transparent;
   border-right: 95px solid transparent;
-  border-bottom: 95px solid red; /* Change color here */
+  border-bottom: 95px solid red;
+  /* Change color here */
   filter: blur(35px);
 }
 .view-1 img {
@@ -240,7 +241,8 @@ footer .footer-bottom {
 }
 .view-2 .whats-new .box {
   width: 100%;
-  background: rgba(255, 255, 255, 0.1); /* soft glassmorphism */
+  background: rgba(255, 255, 255, 0.1);
+  /* soft glassmorphism */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -443,7 +445,8 @@ footer .footer-bottom {
   width: 100%;
   height: 340px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.1); /* soft glassmorphism */
+  background: rgba(255, 255, 255, 0.1);
+  /* soft glassmorphism */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -466,6 +469,75 @@ footer .footer-bottom {
   position: absolute;
 }
 
+@media (max-width: 742px) {
+  .Experience {
+    padding: 2rem;
+  }
+  .Experience .timeline {
+    margin: 50px auto;
+    position: relative;
+    z-index: 0;
+  }
+  .Experience .timeline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 0;
+  }
+  .Experience .timeline .timeline-container {
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  .Experience .timeline .timeline-container i {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: white;
+  }
+  .Experience .timeline .timeline-container .text-box {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    color: black;
+  }
+  .Experience .timeline .timeline-container .text-box h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .Experience .timeline .timeline-container .text-box p {
+    margin-top: 1rem;
+  }
+  .Experience .timeline .timeline-container .text-box .left-container-arrow,
+  .Experience .timeline .timeline-container .text-box .right-container-arrow {
+    display: none;
+  }
+  .Experience .timeline .left-container,
+  .Experience .timeline .right-container {
+    left: 0;
+  }
+  .Experience .timeline .left-container i,
+  .Experience .timeline .right-container i {
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .about {
   width: 100%;
   padding: 2rem 2rem;
@@ -516,7 +588,8 @@ footer .footer-bottom {
     z-index: 1;
     border-left: 0 solid transparent;
     border-right: 200px solid transparent;
-    border-bottom: 200px solid red; /* Change color here */
+    border-bottom: 200px solid red;
+    /* Change color here */
     filter: blur(35px);
   }
   .view-1 img {
@@ -530,6 +603,130 @@ footer .footer-bottom {
   }
   .view-1 p br {
     display: block;
+  }
+  .Experience {
+    padding: 4rem 2rem;
+    width: 100%;
+  }
+  .Experience h2 {
+    font-size: 3rem;
+    color: #CF0F47;
+    text-align: center;
+    font-weight: 100;
+  }
+  .Experience .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+  }
+  .Experience .timeline .timeline-container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: moveDown 1s linear forwards;
+    opacity: 0;
+  }
+  @keyframes moveDown {
+    0% {
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .Experience .timeline .timeline-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .Experience .timeline .timeline-container:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .Experience .timeline .timeline-container:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .Experience .timeline .timeline-container:nth-child(4) {
+    animation-delay: 3s;
+  }
+  .Experience .timeline .timeline-container:nth-child(5) {
+    animation-delay: 4s;
+  }
+  .Experience .timeline .timeline-container:nth-child(6) {
+    animation-delay: 5s;
+  }
+  .Experience .timeline .timeline-container .text-box {
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    color: black;
+  }
+  .Experience .timeline .timeline-container .text-box h3 {
+    font-weight: 600;
+  }
+  .Experience .timeline .timeline-container .text-box p {
+    margin-top: 15px;
+  }
+  .Experience .timeline .timeline-container .text-box .left-container-arrow {
+    height: 0;
+    width: 0;
+    right: -14.5px;
+    position: absolute;
+    top: 28px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid white;
+  }
+  .Experience .timeline .timeline-container .text-box .right-container-arrow {
+    height: 0;
+    width: 0;
+    left: -15px;
+    position: absolute;
+    top: 28px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
+  }
+  .Experience .timeline .timeline-container i {
+    position: absolute;
+    top: 32px;
+    width: 40px;
+    right: -20px;
+    z-index: 10;
+    border-radius: 50%;
+    color: white;
+    font-size: larger;
+  }
+  .Experience .timeline .left-container {
+    left: 0;
+  }
+  .Experience .timeline .left-container i {
+    right: -80px;
+  }
+  .Experience .timeline .right-container {
+    left: 50%;
+  }
+  .Experience .timeline .right-container i {
+    left: -59px;
+  }
+  .Experience .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    animation: moveLine 6s linear forwards;
+  }
+  @keyframes moveLine {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
   }
   .view-2 {
     padding: 4rem 4rem;
@@ -604,6 +801,36 @@ footer .footer-bottom {
     padding: 10px 50px;
     position: relative;
     width: 50%;
+    animation: moveDown 1s linear forwards;
+    opacity: 0;
+  }
+  @keyframes moveDown {
+    0% {
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .Experience .timeline .timeline-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .Experience .timeline .timeline-container:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .Experience .timeline .timeline-container:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .Experience .timeline .timeline-container:nth-child(4) {
+    animation-delay: 3s;
+  }
+  .Experience .timeline .timeline-container:nth-child(5) {
+    animation-delay: 4s;
+  }
+  .Experience .timeline .timeline-container:nth-child(6) {
+    animation-delay: 5s;
   }
   .Experience .timeline .timeline-container .text-box {
     padding: 20px 30px;
@@ -617,6 +844,26 @@ footer .footer-bottom {
   }
   .Experience .timeline .timeline-container .text-box p {
     margin-top: 15px;
+  }
+  .Experience .timeline .timeline-container .text-box .left-container-arrow {
+    height: 0;
+    width: 0;
+    right: -14.5px;
+    position: absolute;
+    top: 28px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid white;
+  }
+  .Experience .timeline .timeline-container .text-box .right-container-arrow {
+    height: 0;
+    width: 0;
+    right: 115px;
+    position: absolute;
+    top: 28px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
   }
   .Experience .timeline .timeline-container i {
     position: absolute;
@@ -649,6 +896,15 @@ footer .footer-bottom {
     top: 0;
     left: 50%;
     margin-left: -3px;
+    animation: moveLine 6s linear forwards;
+  }
+  @keyframes moveLine {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
   }
   .view-1 {
     padding: 4rem 2rem;
@@ -665,7 +921,8 @@ footer .footer-bottom {
     z-index: 1;
     border-left: 0 solid transparent;
     border-right: 200px solid transparent;
-    border-bottom: 200px solid red; /* Change color here */
+    border-bottom: 200px solid red;
+    /* Change color here */
     filter: blur(35px);
   }
   .view-1 .marquee {
