@@ -36,16 +36,20 @@ nav {
   z-index: 1;
 }
 nav a {
+  opacity: 0.6;
   color: #fff;
   text-decoration: none;
 }
 nav .logo {
-  padding: 0.3em;
-  background-color: white;
+  padding: 7px 15px;
+  background-color: chocolate;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 30px;
+  color: black;
+  font-weight: 600;
 }
 
 @media (min-width: 1020px) {
@@ -67,7 +71,6 @@ nav .logo {
     font-size: 1.2rem;
   }
   nav .nav-links {
-    opacity: 0.6;
     display: flex;
     gap: 30px;
     align-items: center;
@@ -84,14 +87,8 @@ nav .logo {
     color: #CF0F47;
     transform: scale(1.1);
   }
-  nav .logo {
-    padding: 0.5rem;
-    font-weight: 700;
-    background-color: rgb(245, 35, 35);
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  nav .hamburger {
+    display: none;
   }
 }
 footer {
@@ -452,21 +449,50 @@ footer .footer-bottom {
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   border-radius: 5px;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.view-3 .v3-grid .v3-boxes .img-cont {
+  width: 300px;
+  height: 190px;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.view-3 .v3-grid .v3-boxes .img-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  aspect-ratio: 1/2;
+  transition: all 0.3s ease;
+}
+.view-3 .v3-grid .v3-boxes .img-cont img:hover {
+  cursor: pointer;
+  scale: 1.05;
 }
 .view-3 .v3-grid .v3-boxes h3 {
   font-size: 1.2rem;
   font-weight: 100;
   color: white;
   text-align: left;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 .view-3 .v3-grid .v3-boxes .box-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #392d1c;
+  background-color: rgba(255, 0, 0, 0.452);
   padding: 1.1rem;
   position: absolute;
+  bottom: 0;
+  text-align: left;
+  right: 0;
+}
+.view-3 .v3-grid .v3-boxes .box-info p {
+  font-size: 1rem;
 }
 
 @media (max-width: 742px) {
@@ -497,7 +523,7 @@ footer .footer-bottom {
   }
   .Experience .timeline .timeline-container i {
     position: absolute;
-    top: 32px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
@@ -505,7 +531,7 @@ footer .footer-bottom {
     height: 40px;
     border-radius: 50%;
     font-size: 1.2rem;
-    color: white;
+    color: rgb(255, 255, 255);
   }
   .Experience .timeline .timeline-container .text-box {
     background-color: white;
@@ -572,6 +598,9 @@ footer .footer-bottom {
 }
 
 @media (min-width: 743px) and (max-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
   .view-1 {
     padding: 4rem 4rem;
     flex-direction: column;
@@ -675,7 +704,7 @@ footer .footer-bottom {
     top: 28px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
+    border-left: 15px solid rgb(255, 47, 47);
   }
   .Experience .timeline .timeline-container .text-box .right-container-arrow {
     height: 0;
@@ -685,7 +714,7 @@ footer .footer-bottom {
     top: 28px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid white;
+    border-right: 15px solid rgb(190, 42, 42);
   }
   .Experience .timeline .timeline-container i {
     position: absolute;
@@ -853,17 +882,17 @@ footer .footer-bottom {
     top: 28px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
+    border-left: 15px solid rgb(206, 24, 24);
   }
   .Experience .timeline .timeline-container .text-box .right-container-arrow {
     height: 0;
     width: 0;
-    right: 115px;
+    right: 500px;
     position: absolute;
     top: 28px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid white;
+    border-right: 15px solid rgb(238, 0, 0);
   }
   .Experience .timeline .timeline-container i {
     position: absolute;
@@ -1064,6 +1093,13 @@ footer .footer-bottom {
   .view-3 .v3-grid .v3-boxes {
     width: 100%;
     height: 320px;
+    justify-content: flex-start;
+  }
+  .view-3 .v3-grid .v3-boxes p {
+    font-size: 1.125rem;
+  }
+  .view-3 .v3-grid .v3-boxes h3 {
+    font-size: 1.5rem;
   }
   .about {
     margin-top: 50px;
@@ -1097,5 +1133,50 @@ footer .footer-bottom {
     top: 150px;
     left: 1150px;
     width: 250px;
+  }
+}
+/* Hamburger Menu */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    width: 30px;
+    height: 25px;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger span {
+    height: 3px;
+    display: block;
+    width: 100%;
+    background-color: red;
+    transition: all 0.3s ease;
+  }
+  .hamburger.active span:nth-child(2) {
+    transform: rotate(45deg) translate(5px, -2px);
+  }
+  .hamburger.active span:nth-child(1) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -1px);
+  }
+  nav .nav-links {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    height: 100vh;
+    right: -100%;
+    background-color: rgb(0, 0, 1);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: all 0.3s ease;
+  }
+  nav .nav-links.active {
+    right: 0;
   }
 }/*# sourceMappingURL=style.css.map */
