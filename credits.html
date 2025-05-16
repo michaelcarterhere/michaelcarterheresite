@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: #FFDEDE;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 100;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .attribution {
+            margin-bottom: 30px;
+        }
+
+        .attribution h2 {
+            color: #FFDEDE;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .attribution p {
+            line-height: 1.6;
+        }
+
+        .back-button {
+            background-color: red;
+            color: #FFDEDE;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: darkred;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Credits</h1>
+
+        <div class="attribution">
+            <h2>Fonts</h2>
+            <p>This page uses the <a href="https://fonts.google.com/specimen/Poppins" style="color: red; text-decoration: none;">Poppins</a> font from Google Fonts. It is licensed under the <a href="https://scripts.sil.org/cms/render/content/index.php?cmsid=OFL" style="color: red; text-decoration: none;">SIL Open Font License, Version 1.1</a>.</p>
+        </div>
+
+        <div class="attribution">
+            <h2>Icons</h2>
+            <p>This page uses icons from <a href="https://remixicon.com/" style="color: red; text-decoration: none;">Remix Icon</a>, an open-source icon set. It is licensed under the <a href="https://github.com/Remix-Design/remixicon/blob/master/LICENSE" style="color: red; text-decoration: none;">Apache License Version 2.0</a>.</p>
+        </div>
+
+        <button class="back-button" onclick="location.href='/index.html'">
+            <i class="ri-arrow-left-line"></i> Back
+        </button>
+    </div>
+</body>
+</html>

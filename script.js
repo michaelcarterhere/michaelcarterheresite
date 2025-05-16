@@ -17,7 +17,17 @@ document.addEventListener('DOMContentLoaded', function(){
             hamburger.classList.remove('active')
             navLinks.classList.remove('active')
         })
+        
     })
+
+
+
+
+
+    
+
+
+
     
     
 
