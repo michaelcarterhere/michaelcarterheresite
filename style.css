@@ -197,7 +197,7 @@ footer a:hover {
   font-size: 1.1rem;
   text-align: center;
   line-height: 1.6;
-  margin: 0.9rem 0;
+  margin: 0.6rem 0;
   opacity: 0.6;
 }
 .view-1 p br {
@@ -324,6 +324,7 @@ footer a:hover {
 .cta-page .left h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  margin-top: -3rem;
   color: #CF0F47;
   font-weight: 200;
 }
@@ -1193,4 +1194,252 @@ footer a:hover {
   nav .nav-links.active {
     right: 0;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Contact CTA Styles */
+.contact-cta {
+  width: 100%;
+}
+
+.contact-cta h2 {
+  color: #CF0F47;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.cta-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(207, 15, 71, 0.05), rgba(255, 107, 157, 0.02));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(207, 15, 71, 0.4);
+  box-shadow: 0 25px 50px rgba(207, 15, 71, 0.15), 0 0 0 1px rgba(207, 15, 71, 0.1);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card.primary {
+  border-color: rgba(207, 15, 71, 0.4);
+  background: rgba(207, 15, 71, 0.12);
+}
+
+.contact-card.primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #CF0F47, #ff6b9d, #CF0F47);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: -200% 0; }
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(207, 15, 71, 0.2), rgba(255, 107, 157, 0.1));
+  border-radius: 16px;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-icon i {
+  font-size: 1.6rem;
+  color: #CF0F47;
+}
+
+.contact-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  color: #fff;
+  font-weight: 300;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, #CF0F47, #e91e63);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(207, 15, 71, 0.3);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(207, 15, 71, 0.4);
+  background: linear-gradient(135deg, #e91e63, #CF0F47);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(207, 15, 71, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.cta-button i {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+  transform: translateX(3px);
+}
+
+/* Desktop Responsive */
+@media (min-width: 1020px) {
+  .contact-cta h2 {
+    font-size: 2.75rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1.05rem;
+  }
+  
+  .contact-options {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .contact-card {
+    flex: 1;
+    padding: 2.5rem 2rem;
+    min-height: 280px;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.4rem;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* CTA Page Responsive - Change to column below 1347px */
+@media (max-width: 1346px) {
+  .cta-page {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  .cta-page .left {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+  
+  .cta-page .right {
+    width: 100% !important;
+  }
+}

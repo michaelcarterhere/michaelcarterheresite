@@ -3,93 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Credits - Michael</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: black;
-            color: #FFDEDE;
+        * {
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
             box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a0a 50%, #000000 100%);
+            color: #FFDEDE;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(207, 15, 71, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 20%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
         }
 
         .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
             text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out;
         }
 
-        h1 {
-            font-weight: 100;
-            color: red;
-            margin-bottom: 20px;
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #CF0F47;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .attribution {
-            margin-bottom: 30px;
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #CF0F47, #ff6b9d);
+            border-radius: 2px;
         }
 
-        .attribution h2 {
-            color: #FFDEDE;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .attribution p {
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
             line-height: 1.6;
         }
 
-        .back-button {
-            background-color: red;
-            color: #FFDEDE;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
+        .credits-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .credit-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(207, 15, 71, 0.05), rgba(255, 107, 157, 0.02));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .credit-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(207, 15, 71, 0.3);
+            box-shadow: 0 25px 50px rgba(207, 15, 71, 0.15), 0 0 0 1px rgba(207, 15, 71, 0.1);
+        }
+
+        .credit-card:hover::before {
+            opacity: 1;
+        }
+
+        .credit-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(207, 15, 71, 0.2), rgba(255, 107, 157, 0.1));
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .credit-icon i {
+            font-size: 1.8rem;
+            color: #CF0F47;
+        }
+
+        .credit-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .credit-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .credit-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .credit-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 5px;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .credit-link:hover {
+            background: rgba(207, 15, 71, 0.15);
+            border-color: rgba(207, 15, 71, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(207, 15, 71, 0.2);
+        }
+
+        .credit-link i {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .credit-link:hover i {
+            transform: translateX(3px);
+        }
+
+        .developers-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(207, 15, 71, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .developers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #CF0F47, #ff6b9d, #CF0F47);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: -200% 0; }
+        }
+
+        .developers-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .developer-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .developer-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .developer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #CF0F47, #ff6b9d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .developer-info h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .developer-info a {
+            color: #CF0F47;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .developer-info a:hover {
+            opacity: 1;
+        }
+
+        .back-section {
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #CF0F47, #e91e63);
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(207, 15, 71, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .back-button:hover::before {
+            left: 100%;
         }
 
         .back-button:hover {
-            background-color: darkred;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(207, 15, 71, 0.4);
+            background: linear-gradient(135deg, #e91e63, #CF0F47);
         }
 
-        @media (min-width: 600px) {
+        .back-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover i {
+            transform: translateX(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
             .container {
-                padding: 40px;
+                padding: 3rem;
+            }
+
+            .header h1 {
+                font-size: 4rem;
+            }
+
+            .credits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .developers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .credit-card {
+                padding: 1.5rem;
+            }
+
+            .developers-section {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Credits</h1>
-
-        <div class="attribution">
-            <h2>Fonts</h2>
-            <p>This page uses the <a href="https://fonts.google.com/specimen/Poppins" style="color: red; text-decoration: none;">Poppins</a> font from Google Fonts. It is licensed under the <a href="https://scripts.sil.org/cms/render/content/index.php?cmsid=OFL" style="color: red; text-decoration: none;">SIL Open Font License, Version 1.1</a>.</p>
+        <div class="header">
+            <h1>Credits</h1>
         </div>
 
-        <div class="attribution">
-            <h2>Icons</h2>
-            <p>This page uses icons from <a href="https://remixicon.com/" style="color: red; text-decoration: none;">Remix Icon</a>, an open-source icon set. It is licensed under the <a href="https://github.com/Remix-Design/remixicon/blob/master/LICENSE" style="color: red; text-decoration: none;">Apache License Version 2.0</a>.</p>
+        <div class="credits-grid">
+            <div class="credit-card">
+                <div class="credit-icon">
+                    <i class="ri-font-size-2"></i>
+                </div>
+                <h2>Typography</h2>
+                <p>This project uses the beautiful Poppins font family from Google Fonts, providing excellent readability and modern aesthetics across all devices.</p>
+                <div class="credit-links">
+                    <a href="https://fonts.google.com/specimen/Poppins" target="_blank" class="credit-link">
+                        <span>View Font</span>
+                        <i class="ri-external-link-line"></i>
+                    </a>
+                    <a href="https://scripts.sil.org/cms/render/content/index.php?cmsid=OFL" target="_blank" class="credit-link">
+                        <span>SIL License</span>
+                        <i class="ri-file-text-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="credit-card">
+                <div class="credit-icon">
+                    <i class="ri-palette-line"></i>
+                </div>
+                <h2>Icons</h2>
+                <p>All icons throughout this website are powered by Remix Icon, an open-source neutral-style icon system designed for designers and developers.</p>
+                <div class="credit-links">
+                    <a href="https://remixicon.com/" target="_blank" class="credit-link">
+                        <span>Remix Icon</span>
+                        <i class="ri-external-link-line"></i>
+                    </a>
+                    <a href="https://github.com/Remix-Design/remixicon/blob/master/LICENSE" target="_blank" class="credit-link">
+                        <span>Apache License</span>
+                        <i class="ri-file-text-line"></i>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <button class="back-button" onclick="location.href='/index.html'">
-            <i class="ri-arrow-left-line"></i> Back
-        </button>
+        <div class="developers-section">
+            <div class="credit-icon">
+                <i class="ri-code-s-slash-line"></i>
+            </div>
+            <h2>Development Team</h2>            
+            <div class="developers-grid">
+                <div class="developer-card">
+                    <div class="developer-avatar">KP</div>
+                    <div class="developer-info">
+                        <h3>Kush Patel</h3>
+                        <a href="https://www.linkedin.com/in/kush-patel" target="_blank">
+                            <i class="ri-linkedin-box-fill"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="developer-card">
+                    <div class="developer-avatar">AP</div>
+                    <div class="developer-info">
+                        <h3>Aum Patel</h3>
+                        <a href="https://www.linkedin.com/in/aum-patel" target="_blank">
+                            <i class="ri-linkedin-box-fill"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-section">
+            <a href="index.html" class="back-button">
+                <i class="ri-arrow-left-line"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
 </body>
 </html>
