@@ -7,6 +7,7 @@ title: Blog
 <ul class="blog-list">
   {% for post in site.posts %}
     <li class="blog-item">
+      <!-- Blog post listing with thumbnail -->
       <a href="{{ post.url }}">
         {% if post.thumbnail %}
           <img src="{{ post.thumbnail }}" alt="Thumbnail for {{ post.title }}" class="post-thumb">
