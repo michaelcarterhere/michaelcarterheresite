@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Predictive Policing in NYC"
-date: 2025-05-05
+date: 2025-05-01
 ---
 Crime Prediction
 
