@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome Again"
-date: 2025-06-09
+date: 2025-06-10
 ---
 This is post number two for this site. It is satisfying to do it this way instead of with a platform. 
 But I will move to back to a platform eventually. 
